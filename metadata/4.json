@@ -1,0 +1,10 @@
+{
+    "name": "Herbie Starbelly",
+    "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.",
+    "image": "https://bafybeiejp7ivpngp6kqoangt6iztvukdbdfip5w5ot4sk63uj6bw66u2k4.ipfs.dweb.link/1.svg",
+    "attributes": [
+        "cool",
+        "bored",
+        "hairy"
+    ]
+}

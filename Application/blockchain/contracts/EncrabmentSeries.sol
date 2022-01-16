@@ -8,12 +8,12 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 
-contract MyToken is ERC721, ERC721Enumerable, Ownable {
+contract TestEncrab is ERC721, ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("MyToken", "MTK") {}
+    constructor() ERC721("TEST ENCRAB", "TENCB") {}
 
     function safeMint(address to) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
@@ -22,14 +22,14 @@ contract MyToken is ERC721, ERC721Enumerable, Ownable {
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://ipfs.io/ipfs/QmXbPc9W7hyBYxGTTZF1AaSzQtaNHRnWRrsGP3myE1k59Y/";
+        return "https://gateway.pinata.cloud/ipfs/QmcmNp4MBfXn8b3ETHPmVAgCydfqe2gQA4q8qUXZnL3CH7/";
     }
 
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
 
         string memory baseURI = _baseURI();
-        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, Strings.toString(tokenId), ".png")) : "";
+        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, Strings.toString(tokenId), ".json")) : "";
     }
 
 
