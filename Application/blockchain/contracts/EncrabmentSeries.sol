@@ -8,12 +8,14 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 
-contract TestEncrab is ERC721, ERC721Enumerable, Ownable {
+contract MyToken is ERC721, ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("TEST ENCRAB", "TENCB") {}
+    string private _baseURIextended = "https://ipfs.io/ipfs/QmXbPc9W7hyBYxGTTZF1AaSzQtaNHRnWRrsGP3myE1k59Y/";
+
+    constructor() ERC721("The Encrabment Series", "ENCRB") {}
 
     function safeMint(address to) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
@@ -21,8 +23,12 @@ contract TestEncrab is ERC721, ERC721Enumerable, Ownable {
         _safeMint(to, tokenId);
     }
 
-    function _baseURI() internal pure override returns (string memory) {
-        return "https://gateway.pinata.cloud/ipfs/QmcmNp4MBfXn8b3ETHPmVAgCydfqe2gQA4q8qUXZnL3CH7/";
+    function setBaseURI(string memory baseURI_) external onlyOwner() {
+        _baseURIextended = baseURI_;
+    }
+
+    function _baseURI() internal view virtual override returns (string memory) {
+        return _baseURIextended;
     }
 
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
