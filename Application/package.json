@@ -6,20 +6,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-chain": "cd blockchain && npx hardhat node",
+    "start-chain": "cd blockchain && npm i && npx hardhat node",
     "chain-deploy-local": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
-    "cp-abi": "cp blockchain/artifacts/contracts/nftContract.sol/GameItem.json utils/" 
+    "cp-abi": "cp blockchain/artifacts/contracts/nftContract.sol/GameItem.json utils/"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.8",
     "ethers": "^5.5.3",
+    "postcss": "^8.4.5",
     "tailwindcss": "^3.0.15",
     "web3modal": "^1.9.5"
   }

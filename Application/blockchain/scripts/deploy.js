@@ -2,13 +2,13 @@ const hre = require("hardhat");
 const fs = require('fs');
 
 async function main() {
-  const GameItem = await hre.ethers.getContractFactory("GameItem");
-  const gameItem = await GameItem.deploy();
-  await gameItem.deployed();
-  console.log("gameItem deployed to:", gameItem.address);
+  const EncrabmentSeries = await hre.ethers.getContractFactory("EncrabmentSeries");
+  const encrabmentSeries = await EncrabmentSeries.deploy();
+  await encrabmentSeries.deployed();
+  console.log("encrabmentSeries deployed to:", encrabmentSeries.address);
 
   let config = `
-  export const gameitemaddress = "${gameItem.address}"
+  export const nftaddress = "${encrabmentSeries.address}"
   `
 
   let data = JSON.stringify(config)
