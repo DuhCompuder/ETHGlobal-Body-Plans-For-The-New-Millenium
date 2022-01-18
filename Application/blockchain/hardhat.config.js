@@ -26,6 +26,10 @@ module.exports = {
     hardhat: {
       chainId: 1337
     },
+    rinkeby: {
+      url: `https://eth-ropsten.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+      accounts: [`${RINKEBY_PRIVATE_KEY}`]
+    },
     // ropsten: {
     //   url: `https://eth-ropsten.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
     //   accounts: [`${ROPSTEN_PRIVATE_KEY}`]

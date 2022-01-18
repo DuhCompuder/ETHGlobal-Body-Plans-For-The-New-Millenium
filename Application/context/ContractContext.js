@@ -13,11 +13,11 @@ export const getEthereumContract = async () => {
     const signer = provider.getSigner()
     const transactionContract = new ethers.Contract(contractAddress, contractABI, signer)
 
-    console.log({
-        provider, 
-        signer,
-        transactionContract
-    })
+    // console.log({
+    //     provider, 
+    //     signer,
+    //     transactionContract
+    // })
     return transactionContract;
 }
 
@@ -25,7 +25,7 @@ export const TransactionProvider = ({ children }) => {
     const [connectedAccount, setConnectedAccount] = useState(null)
    
     return (
-      <TransactionContext.Provider value={{ connectWallet, connectedAccount, formData, setFormData, handleChange, getEthereumContract }}>
+      <TransactionContext.Provider value={{ connectedAccount, getEthereumContract }}>
           {children}
       </TransactionContext.Provider>
   )

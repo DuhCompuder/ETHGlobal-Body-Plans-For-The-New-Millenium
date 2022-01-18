@@ -8,10 +8,12 @@
     "lint": "next lint",
     "start-chain": "cd blockchain && npm i && npx hardhat node",
     "chain-deploy-local": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
-    "cp-abi": "cp blockchain/artifacts/contracts/nftContract.sol/GameItem.json utils/"
+    "cp-abi": "cp blockchain/artifacts/contracts/EncrabmentSeries.sol/EncrabmentSeries.json utils/"
   },
   "dependencies": {
+    "@alch/alchemy-web3": "^1.1.9",
     "axios": "^0.24.0",
+    "dotenv": "^14.0.1",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
